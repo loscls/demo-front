@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --fnt: #020509; /* rgb(2, 5, 9) */
+  --bg-clr: #e9f3fb; /* rgb(233, 243, 251) */
+  --nav-fnt: #ffffff; /* rgb(18, 9, 204) */
+  --nav-clr: #8084d6; /* rgb(128, 132, 214) */
+  --prim-btn: #ffff00; /* rgb(255, 255, 0) */
+  --sec-btn: #ffffff; /* rgb(255, 255, 255) */
+  --accent: #1209cc ; /* rgb(18, 9, 204) */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: var(--bg-clr);
+}

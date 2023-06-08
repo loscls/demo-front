@@ -1,0 +1,66 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--nav-clr);
+  margin: 0.313rem 0.313rem 0 0.313rem;
+  border-radius: 0.6rem;
+  height: 3.25rem;
+  gap: 4.5rem;
+}
+
+.title {
+  width: 32rem;
+  text-align: center;
+}
+
+a {
+  color: var(--nav-fnt);
+  text-decoration: none;
+}
+
+a:hover{
+  color: var(--accent);
+}
+
+.srch {
+  width: 40rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+.srch-bar {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  align-self: center;
+  height: 70%;
+  width: 90%;
+}
+
+.srch-btn {
+  align-self: center;
+  height: 2.5em;
+  width: 2.5em;
+  border-radius: 1rem;
+  border: none;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.nav-route {
+  width: 30rem;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+/* .nav-route li {
+  flex-grow: 1;
+  padding: 0.5rem 1.5rem;
+} */
+
+
