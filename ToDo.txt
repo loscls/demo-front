@@ -1,0 +1,69 @@
+[ ] modificare sellersignup affinche sia per admin
+[ ] in login inserire la possibilità di registrarsi come utente normale quindi creare un componente userSignup
+
+-------------------------------------------------------------------------------------------
+
+[ ] authentication.service
+  [ ] aggiungi controllo admin o no isAdimin = new BehaviorSubject<boolean>(false);
+  [ ] nel signUp e nel logIn controllare se admin o no e reindirizzare verso la corretta pagina !!!! COME CAPIRE SE ADMIN O USER????
+        //PROBLEMA come salvare nel localstorage se admin o no, token (SALVATO token)
+
+-------------------------------------------------------------------------------------------
+
+
+[ ] NAVBAR
+  [ ] Prima del login in mostra solo il bottone HOME, la SEARCH BAR e il bottone LOGIN
+  [ ] Per ADMIN LOGGATO mostra bottone SELLER (seller-home), LOG OUT
+  [ ] Per USER LOGGATO mostra bottone PROFILE, CART, LOG OUT
+
+-------------------------------------------------------------------------------------------
+
+
+[ ] HOME
+  [ ] Sotto la NAV possibilità di filtrare i prodotti mostrati nella home
+  [ ] CARD con prodotti
+
+-------------------------------------------------------------------------------------------
+
+
+[ ] LOGIN
+  [ ] Pagina unica con form per il log di AMIN e USER
+  [ ] Sotto il form di Log possibilità di fare il SING UP se non si è registrati che collega ad un'altra pagina
+  [ ] Inviare la login request e salvare nel localStorage l'utente
+
+-------------------------------------------------------------------------------------------
+
+
+[ ] SIGN UP
+  [ ] Pagina unica di registrazione con form, SPUNTA "vuoi vendere o comprare?" (scelta admin o user)
+      ADMIN può vendere (inserire prodotti)
+      USER può solo comprare
+
+-------------------------------------------------------------------------------------------
+
+[ ] SELLER HOME
+  [ ] SCHEDA PROFILO con dati dell'utente e tasto per modificarli
+    [ ] Il tasto per modificarli aprirà un form di modifica
+  [ ] LISTA PRODOTTI del venditore con tasto per rimuovere (?)
+  [ ] Sotto la lista dei prodotti tre bottoni CERCA - AGGIUNGI - RIMUOVI
+
+-------------------------------------------------------------------------------------------
+
+[ ] PROFILO USER (USER HOME ?)
+  [ ] SCHEDA PROFILO con dati dell'utente e tasto per modificarli
+
+-------------------------------------------------------------------------------------------
+
+[ ] CARD PRODOTTO
+  [ ] addToCart fa chiamata a DB user.service addToCart
+
+-------------------------------------------------------------------------------------------
+
+
+Seller diventa SIGN IN
+Seller home diventa PROFILE
+ADMIN soltanto vendita (modificare granularità su spring)
+USER solo acquisti
+
+
+

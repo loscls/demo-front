@@ -1,0 +1,67 @@
+CORS (Cross Origin Resource Sharing)
+
+  Meccanismo di sicurezza che permette o limita le richieste di risorse tra origini diverse.
+
+  Quindi impostare nel backend che è possibile accettare richieste da determinati endpoint.
+  Può essere introdotta a livello globare nel file di configurazione, a livello di classe, o di metodo per avere una diversa granularità
+
+-------------------------------------------
+Servizio Angular
+
+  Classe utilizzata per organizzare e condividere la logica (aziendale, accesso ai dati).
+
+  I Servizi angular sono Singleton, una solo istanza del servizio per l'intera applicazione, e quindi condiviso fra tutti i componenti.
+
+  PRO:
+    Riutilizzo del codice.
+    Separazione di responsabilità.
+    Accesso ai dati condivisi.
+------------------------------------------
+Costanti (constants.ts)
+
+  mediante un file chiamato constants ts andremo a definire dizionari di costranti che poi potremmo andare ad utilizzare in tutto il codice
+
+  avere delle costanti è utilie per evitare di scrivere determinate cose ogni volta, o per modificare facilmente dei parametri in un posto solo rispetto a cambiarle in ogni punto in cui sono dichiarate
+
+  definire dizionari:
+    export const NOME_DIZIONARIO = { valoreUno:"valore", valoreDue "valore" }
+------------------------------------------
+Auth Guard
+  meccanismo che permette di controllare l'accesso alle rotte dell'applicazione in base allo stato di autenticazione dell'utente.
+  viene implementato come un servizio Angular che implementa l'interfaccia CanActivate o una delle sue varianti come CanActivateChild, CanLoad, ecc.
+------------------------------------------
+SINTASSI
+
+  ?
+    Dichiarare qualcosa con "?" alla fine
+      es.
+        body?:any
+      Signigica che la variabile o la proprietà può essere opzionale e potrebbe avere un valore definito o potrebbe essere undefined/null.
+
+  ...
+    dichairare qualcosa con prima "..."
+      es.
+        options = {...options, body}
+      significa in option copiare tutto quello dopo "..." e poi continua
+
+
+
+
+DOMANDE
+  -gestione token e granularità di sicurezza
+    CREARE HEADER NELLE OPTION QUANDO FACCIAMO MAKEREQUEST
+
+  -un auth guard, CanActivate per ogni path?
+  -ins sellerService nel . subscribe che controlli?
+
+  -gestione seller -> seller-home -> add product ecc
+
+
+
+----------------------------
+Sequenza avvio componenti
+resolve -> constructor -> ngOnInit
+
+
+
+

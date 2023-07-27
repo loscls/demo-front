@@ -1,0 +1,44 @@
+.login-body {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  height: 80vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form h1{
+  margin-bottom: 1rem;
+  color: var(--fnt);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.50rem;
+  width: 20rem;
+  height: 100%;
+}
+
+form > input {
+  height: 2.5rem;
+  border: 1px solid var(--accent);
+  border-radius: .5rem;
+  padding: .5rem;
+}
+
+form > span {
+  align-self: center;
+}
+
+form > button {
+  width: 5rem;
+  height: 2rem;
+  align-self: center;
+  border-radius: .5rem;
+}

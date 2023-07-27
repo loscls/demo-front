@@ -1,0 +1,36 @@
+.card {
+
+  position: relative;
+  background-color: antiquewhite;
+  width: 350px;
+  box-shadow: 0 0.3rem 1.25rem black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.25rem 1.25rem 2.5rem;
+  border-radius: 0.5rem;
+
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.data h3 {
+  font-size: 2rem;
+  color: var(--fnt);
+}
+
+.data span {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+
+
+img {
+  width: 100%;
+}
+
+
