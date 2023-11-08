@@ -1,0 +1,64 @@
+<div class="body">
+
+  <div class="profile-card" *ngIf="!updateForm">
+    <div class="profile-pic"></div>
+
+    <div class="profile-data">
+      <div class="column">
+        <span class="data"><b>NAME:</b><br />{{ profile.name }}</span>
+
+        <span class="data"><b>SURNAME:</b><br />{{ profile.surname }}</span>
+
+        <span class="data"><b>EMAIL:</b><br />{{ profile.email }} </span>
+      </div>
+
+      <div class="column">
+        <span class="data"><b>ROLE:</b><br />{{ profile.role }}</span>
+
+        <span class="data" *ngIf="!isAdmin"><b>BALANCE:</b><br />{{ profile.balance }}$</span>
+
+        <button class="addBalance-btn" mat-raised-button *ngIf="!isAdmin && !addBalanceForm" (click)="activateBalanceForm()">ADD BALANCE</button>
+        <div class="addBalance-form" *ngIf="!isAdmin && addBalanceForm">
+          <input class="balance-input" type="number" min=0.01 [formControl]="balanceToAdd" >
+          <button class="balance-btn" [disabled]="balanceToAdd.invalid" mat-raised-button color="primary" (click)="addBalance()">ADD</button>
+        </div>
+      </div>
+
+      <button class="mat-mini-fab, edit-btn" mat-mini-fab (click)="activateUpdateForm()">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="update-form" *ngIf="updateForm">
+    <h1>UPDATE YOUR INFO</h1>
+    <form class="update-user-form" [formGroup]="updateUserForm">
+
+      <div class="formInput">
+        <input [ngClass]="{'inputError':updateUserForm.get('name')!.errors}" type="text" formControlName="name" placeholder="Name">
+        <div class="errors" *ngIf="updateUserForm.get('name')!.errors?.['pattern']">*Only Characters</div>
+      </div>
+
+      <div class="formInput">
+        <input [ngClass]="{'inputError':updateUserForm.get('surname')!.errors}" type="text" formControlName="surname" placeholder="Surname">
+        <div class="errors" *ngIf="updateUserForm.get('surname')!.errors?.['pattern']">*Only Characters</div>
+      </div>
+
+      <div class="formInput">
+        <input [ngClass]="{'inputError':updateUserForm.get('email')!.errors}" type="text" formControlName="email" placeholder="Email">
+        <div class="errors" *ngIf="updateUserForm.get('email')!.errors?.['pattern']">*Incorrect</div>
+      </div>
+
+      <div class="formButtons">
+        <button [disabled]="updateUserForm.invalid" mat-raised-button color="primary" (click)="UpadateUser()">ADD</button>
+
+        <button class="mat-mini-fab, closeBtn" mat-mini-fab (click)="activateUpdateForm()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+</div>

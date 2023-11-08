@@ -11,7 +11,10 @@
 
 .title {
   width: 32rem;
+  margin: auto;
+  margin-left: 0px;
   text-align: center;
+  font-weight: bold;
 }
 
 a {
@@ -19,48 +22,48 @@ a {
   text-decoration: none;
 }
 
-a:hover{
-  color: var(--accent);
-}
-
-.srch {
-  width: 40rem;
-  height: 2.5rem;
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  border-radius: 2rem;
-}
-
-.srch-bar {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  align-self: center;
-  height: 70%;
-  width: 90%;
-}
-
-.srch-btn {
-  align-self: center;
-  height: 2.5em;
-  width: 2.5em;
-  border-radius: 1rem;
-  border: none;
-  margin-right: 10px;
-  margin-left: 5px;
-}
-
 .nav-route {
   width: 30rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
   list-style-type: none;
 }
 
-/* .nav-route li {
-  flex-grow: 1;
-  padding: 0.5rem 1.5rem;
-} */
+.login {
+  border-radius: 0.5rem;
+  background: none;
+  cursor: pointer;
+  border: 2px solid var(--accent);
+  padding: 0.7em;
+  color: var(--nav-fnt);
+  font-size: 1rem;
+}
+
+.profile {
+  border-radius: 0.5rem;
+  background: none;
+  cursor: pointer;
+  padding: 0.7em;
+  color: var(--nav-fnt);
+}
+
+.logout {
+  border-radius: 0.5rem;
+  background: none;
+  cursor: pointer;
+  border: 2px solid var(--accent);
+  padding: 0.7em;
+  color: var(--nav-fnt);
+  font-size: 1rem;
+}
+
+.login:hover {
+  background: var(--accent);
+}
+
+.logout:hover {
+  background: var(--accent);
+}
 
 

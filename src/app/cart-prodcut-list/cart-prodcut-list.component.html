@@ -1,0 +1,20 @@
+<div class="product">
+
+  <span class="product-data">{{productInCart.product.name}}</span>
+  <span class="product-data">{{productInCart.product.brand}}</span>
+
+  <select class="qty-selector" id="qtyValue" [formControl]="qtySelect" type="number" placeholder="Quantity" *ngIf="!plusTen" (change)="change($event)">
+    <option *ngFor="let i of quantityArray" [selected] = "i+1 === this.productInCart.quantity">{{i+1}}</option>
+    <option *ngIf="this.productInCart.product.quantity > 10">10+</option>
+  </select>
+
+  <input class="qty-input" type="number" min="9" *ngIf="plusTen" [(ngModel)]="qtyInput" (change)="change($event)">
+
+  <span class="product-data">{{productInCart.product.price}}$</span>
+  <span class="product-data">{{productInCart.totalPrice}}$</span>
+
+  <button class="remove-btn" mat-mini-fab (click)="removeFromCart()">
+    <mat-icon>delete</mat-icon>
+  </button>
+
+</div>

@@ -1,0 +1,77 @@
+<div class="grid">
+
+  <div class="addForm" *ngIf="addForm"> <!-- FORM ADD PRODUCT -->
+    <div class="formBody">
+      <h1>ADD NEW PRODUCT</h1>
+
+      <form class="addProductForm" [formGroup]="addProductForm">
+
+        <div class="formInput">
+          <input [ngClass]="{'inputError':addProductForm.get('name')!.errors}" type="text" formControlName="name" placeholder="Name">
+          <div class="errors" *ngIf="addProductForm.get('name')!.errors?.['pattern']">*Only Characters</div>
+        </div>
+
+        <div class="formInput">
+          <input [ngClass]="{'inputError':addProductForm.get('brand')!.errors}" type="text" formControlName="brand" placeholder="Brand">
+          <div class="errors" *ngIf="addProductForm.get('brand')!.errors?.['pattern']">*Only Characters</div>
+        </div>
+
+        <div class="formInput">
+          <input [ngClass]="{'inputError':addProductForm.get('quantity')!.errors}" type="number" formControlName="quantity" placeholder="Quantity">
+          <div class="errors" *ngIf="addProductForm.get('quantity')!.errors?.['pattern']">*Only Positive Numbers</div>
+        </div>
+
+        <div class="formInput">
+          <input [ngClass]="{'inputError':addProductForm.get('uniCode')!.errors}" type="text" formControlName="uniCode" placeholder="Unicode">
+        </div>
+
+        <div class="formInput">
+          <input [ngClass]="{'inputError':addProductForm.get('price')!.errors}" type="number" formControlName="price" placeholder="Price">
+          <div class="errors" *ngIf="addProductForm.get('price')!.errors?.['pattern']">*Only Positive Numbers</div>
+        </div>
+
+        <div class="formButtons">
+          <button [disabled]="addProductForm.invalid" mat-raised-button color="primary" (click)="addProduct()">ADD</button>
+
+          <button mat-mini-fab class="closeBtn" (click)="activateForm()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="data" *ngIf="!addForm"> <!-- DATA LABEL -->
+    <span class="data-type">NAME</span>
+    <span class="data-type">BRAND</span>
+    <span class="data-type">QUANTITY</span>
+    <span class="data-type">PRICE</span>
+  </div>
+
+  <div *ngIf="!addForm">
+    <app-product-list-card *ngFor="let p of productList | search: searchTerm" [product]="p"></app-product-list-card>
+  </div>
+
+  <div class="buttons" *ngIf="!addForm"> <!-- SEARCH BAR & ADD BUTTON  -->
+
+    <div class="srch"> <!-- SEARCH BAR  -->
+      <input type="text" class="srch-bar" placeholder="Search for Products!" [(ngModel)]="searchTerm">
+    </div>
+
+    <div class="paginator"> <!-- PAGINATOR -->
+
+      <button mat-mini-fab disabled class="arrow-btn" *ngIf="firstPage"><mat-icon>arrow_back</mat-icon></button>
+      <button mat-mini-fab class="arrow-btn" *ngIf="!(firstPage)" (click)="pageBack()"><mat-icon>arrow_back</mat-icon></button>
+
+      <button mat-button disabled class="current-page">{{pgNumber+1}}</button>
+
+      <button mat-mini-fab class="arrow-btn" *ngIf="!(lastPage)" (click)="pageForward()"><mat-icon>arrow_forward</mat-icon></button>
+      <button mat-mini-fab disabled class="arrow-btn" *ngIf="lastPage"><mat-icon>arrow_forward</mat-icon></button>
+
+    </div>
+
+    <button mat-raised-button color="primary" (click)="activateForm()"><mat-icon>add_circle_outline</mat-icon>ADD</button>
+  </div>
+
+</div>

@@ -13,7 +13,6 @@ export class ApiService {
 
   makeRequest(type:string, url:string, body?:any, params?:any): Observable<any>{
     url = API.originUrl + url;
-    console.log(url);
 
     let options = {};
 
@@ -27,13 +26,8 @@ export class ApiService {
       options = {params: httpParams}
     }
 
-    if(localStorage.getItem('seller')) {
-      // let seller = localStorage.getItem('seller');
-      // seller = JSON.parse(seller!);
-      // console.log(seller!.token);
-
-      let seller = JSON.parse(localStorage.getItem('seller')!);
-      console.log(seller['token']);
+    if(localStorage.getItem('User')) {
+      let seller = JSON.parse(localStorage.getItem('User')!);
 
       localStorage.setItem('token', seller['token']);
 
@@ -45,18 +39,14 @@ export class ApiService {
     }
 
     if(body) {
-      options = {...options, body}
+      options = {...options};
 
       if(type.toLocaleLowerCase() == "post") {
-        return this.http.post(url, body);
+        return this.http.post(url, body, options);
       } else if (type.toLocaleLowerCase() == "put") {
-        return this.http.put(url, body);
+        return this.http.put(url, body, options);
       }
-
-    //ha senso passare un body nelle option se già gli possiamo passare un body dal metodo ??????
     }
-
-    //allo stesso modo in option potrei inserire un header httpHeader con dentro un bearer Token
 
     if(type.toLocaleLowerCase() == "delete") {
       return this.http.delete(url, options);

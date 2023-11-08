@@ -6,12 +6,12 @@ import { ProductService } from '../services/product.service';
 })
 
 export class productResolver {
-  constructor(private productServie:ProductService) {}
+  constructor(private productService:ProductService) {}
 
   resolve() {
     let param = { } //
 
-    return this.productServie.getAll();
+    return this.productService.getAll();
   }
 
 }

@@ -1,0 +1,21 @@
+<div class="grid">
+
+  <div class="product">
+    <span class="product-data">{{product.name}}</span>
+    <span class="product-data">{{product.brand}}</span>
+    <span class="product-data">{{product.quantity}}</span>
+    <span class="product-data">{{product.price}}$</span>
+
+    <div class="list-btns">
+      <button class="edit-btn" mat-mini-fab>
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button class="remove-btn" mat-mini-fab (click)="delete()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+
+  </div>
+
+</div>

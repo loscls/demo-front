@@ -1,12 +1,14 @@
 <div class="login-body">
   <div class="form">
+
     <h1>Log In</h1>
-    <!-- l'ngForm chiamato in questo caso #logIn salverà(ngSubmit) i dati acquisiti dal form(logIn.value)  -->
+
     <form #logIn="ngForm" (ngSubmit)="login(logIn.value)">
       <input type="text" ngModel name="email" placeholder="Email">
       <input type="password" ngModel name="password" placeholder="Password">
-      <span>New customer? <a routerLink="/seller">Sign Here!</a></span> <!-- qui vuole /seller nella navbar solo seller  -->
+      <span>New customer? <a routerLink="/seller">Sign Here!</a></span>
       <button>Log In!</button>
     </form>
+
   </div>
 </div>

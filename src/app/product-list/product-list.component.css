@@ -1,0 +1,152 @@
+.grid {
+  padding: 1rem;
+  background-color: var(--nav-clr);
+  border-radius: 0.6rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  width: 90%;
+}
+
+.data {
+  display: grid;
+  grid-template-columns: 30% 5% 30% 5% 30%;
+  justify-items: center;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 10rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons button {
+  font-size: 1rem;
+  border-radius: 3rem;
+  font-weight: bold;
+  box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)
+}
+
+.buttons button:hover {
+  background-color: var(--bg-clr);
+  color: var(--fnt);
+  box-shadow: 0px 1px 0px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.srch {
+  width: 30%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+.srch-bar {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  align-self: center;
+  height: 70%;
+  width: 90%;
+}
+
+.paginator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.current-page {
+  border: 3px solid var(--accent);
+  color: var(--fnt) !important;
+  background-color: var(--bg-clr);
+}
+
+.arrow-btn {
+ height: 30%;
+ width: 30%;
+}
+
+.arrow-btn:hover {
+  background-color: var(--nav-clr);
+  color: var(--fnt);
+  box-shadow: 0px 1px 0px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.formBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.50rem;
+  width: 20rem;
+  height: 100%;
+}
+
+.formInput input {
+  width: 20rem;
+}
+
+form h1{
+  margin-bottom: 1rem;
+  font-size: bold;
+  color: var(--fnt);
+}
+
+.inputError{
+  color: red;
+}
+
+.errors {
+  color: red;
+  padding-left: 1rem;
+}
+
+form input {
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-radius: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.formButtons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.formButtons button {
+  font-size: 1rem;
+  border-radius: 3rem;
+  font-weight: bold;
+  box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)
+}
+
+.formButtons button:hover {
+  background-color: var(--bg-clr);
+  color: var(--fnt);
+  box-shadow: 0px 1px 0px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.closeBtn {
+  background-color: red;
+}
+
+
+
+

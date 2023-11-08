@@ -1,16 +1,29 @@
 <div class="card">
-    <div class="body">
-      <div class="product">
-        <div class="img">
-          <img src="https://healthy.thewom.it/wp-content/uploads/2023/05/pane.jpg" alt="">
-        </div>
+  <div class="product">
 
-        <div class="data">
-            <h3>{{data.name}}</h3>
-            <span>{{data.price}}$</span>
-        </div>
-
-        <button class="addToCart-btn">Add To Cart!</button>
-      </div>
+    <div class="img">
+      <img src={{data.image}} alt="">
     </div>
+
+    <div class="data">
+      <div class="name-price">
+        <h3>{{data.name}}</h3>
+        <span>{{data.price}}$</span>
+      </div>
+
+      <span class="brand">{{data.brand}}</span>
+    </div>
+
+    <div class="buttons">
+      <select class="qty-selector" [formControl]="qtySelect" type="number" placeholder="Quantity" *ngIf="!plusTen" (change)="event($event)">
+        <option *ngFor="let i of quantityArray">{{i+1}}</option>
+        <option *ngIf="this.data.quantity > 10">10+</option>
+      </select>
+
+      <input class="qty-input" type="number" min="1" *ngIf="plusTen" [(ngModel)]="qtyInput">
+
+      <button mat-raised-button class="addToCart-btn" (click)="addToCart()">Add To Cart!</button>
+    </div>
+
+  </div>
 </div>

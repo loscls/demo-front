@@ -1,1 +1,28 @@
-<p>cart works!</p>
+<div class="cart">
+
+  <div class="cart-body">
+
+    <div class="data">
+      <span class="data-type">NAME</span>
+      <span class="data-type">BRAND</span>
+      <span class="data-type">QUANTITY</span>
+      <span class="data-type">PRICE</span>
+      <span class="data-type">TOTAL</span>
+    </div>
+
+    <app-cart-prodcut-list *ngFor="let pIC of productInCart" [productInCart]="pIC"></app-cart-prodcut-list>
+  </div>
+
+
+
+  <div class="total">
+    <span class="data-type">TOTAL PRICE:</span>
+
+    <div class="total-data">
+      <span>{{totalPrice}}$</span>
+      <button mat-raised-button class="buy-btn" (click)="buyAll()">BUT ALL</button>
+    </div>
+
+  </div>
+
+</div>

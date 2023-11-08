@@ -1,3 +1,37 @@
-<h1>home works!</h1>
+<div class="home">
 
-<app-product-card *ngFor="let item of list" [data]="item"></app-product-card>
+  <div class="srch">
+    <button class="srch-btn" (click)="search()" *ngIf="!inSearch">🔎</button>
+    <button class="srch-back" (click)="search()" *ngIf="inSearch"><mat-icon>arrow_back</mat-icon></button>
+    <input type="text" class="srch-bar" placeholder="Search in the site!" [(ngModel)]="searchTerm">
+  </div>
+
+  <div class="product-container">
+    <app-product-card *ngFor="let item of list" [data]="item"></app-product-card>
+  </div>
+
+  <!--
+    ESEMPIO MAT PAGINATOR
+
+    <mat-paginator
+    [length]="length"
+    [pageSize]="pgSize"
+    [showFirstLastButtons]="true"
+    [pageIndex]="pgNumber"
+    (page)="changePageEvent($event)"
+    ></mat-paginator>
+  -->
+
+  <div class="paginator">
+
+    <button mat-mini-fab disabled class="arrow-btn" *ngIf="paging!.first"><mat-icon>arrow_back</mat-icon></button>
+    <button mat-mini-fab class="arrow-btn" *ngIf="!(paging!.first)" (click)="pageBack()"><mat-icon>arrow_back</mat-icon></button>
+
+    <button mat-button disabled class="number-btn current-page">{{pgNumber+1}}</button>
+
+    <button mat-mini-fab class="arrow-btn" *ngIf="!(paging!.last)" (click)="pageForward()"><mat-icon>arrow_forward</mat-icon></button>
+    <button mat-mini-fab disabled class="arrow-btn" *ngIf="paging!.last"><mat-icon>arrow_forward</mat-icon></button>
+
+  </div>
+
+</div>

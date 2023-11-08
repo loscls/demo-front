@@ -1,16 +1,12 @@
 <nav class="nav">
+
   <h1 class="title"><a routerLink="">DEMO</a></h1>
 
-  <div class="srch">
-    <button class="srch-btn">🔎</button>
-    <input type="text" class="srch-bar" placeholder="Cerca nel sito!">
-  </div>
-
   <ul class="nav-route">
-    <li class="seller"><a routerLink="seller">Seller</a></li>
-    <li class="cart"><a routerLink="cart">Cart</a></li>
-    <li class="login"><a routerLink="login">Login</a></li>
-
+    <li class="profile" *ngIf="isLogged"><a routerLink="profile">Profile</a></li>
+    <li class="cart" *ngIf="isLogged && !isAdmin"><a routerLink="cart">Cart</a></li>
+    <li class="login" *ngIf="!isLogged"><a routerLink="login">Login</a></li>
+    <li class="logout" *ngIf="isLogged" (click)="LogOutEvent()"><a routerLink="logout">Logout</a></li>
   </ul>
 
 </nav>

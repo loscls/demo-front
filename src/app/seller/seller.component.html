@@ -1,6 +1,8 @@
 <div class="seller-body">
   <div class="form">
+
     <h1>Sign Up</h1>
+
     <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)">
       <input type="text" ngModel name="name" placeholder="Name">
       <input type="text" ngModel name="surname" placeholder="Surname">
@@ -8,5 +10,6 @@
       <input type="password" ngModel name="password" placeholder="Password">
       <button>Sign Up!</button>
     </form>
+
   </div>
 </div>
